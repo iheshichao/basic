@@ -1,6 +1,8 @@
 package cn.lingban.dubbo.core;
 
 import org.springframework.core.NamedThreadLocal;
+import org.springframework.data.redis.cache.RedisCacheManager;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
