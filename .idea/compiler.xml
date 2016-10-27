@@ -32,7 +32,6 @@
       <module name="api" target="1.8" />
       <module name="basic" target="1.8" />
       <module name="common" target="1.8" />
-      <module name="dubbo001" target="1.8" />
       <module name="service" target="1.8" />
       <module name="web" target="1.8" />
     </bytecodeTargetLevel>
