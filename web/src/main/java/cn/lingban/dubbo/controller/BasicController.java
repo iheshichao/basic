@@ -29,11 +29,10 @@ public class BasicController {
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ApiOperation(value = "登录", httpMethod = "POST", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String login(@ApiParam(required = true, value = "用户名") @RequestParam(value = "username") String username, @ApiParam(required = true, value = "密码") @RequestParam(value = "password") String password, ModelMap modelMap) {
-
         User user = userService.queryUserByName(username);
-
         modelMap.put("currentUser", user);
         return "index";
     }
+
 
 }
