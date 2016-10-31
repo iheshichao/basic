@@ -3,7 +3,10 @@ package cn.lingban.dubbo.po;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by heshichao on 16-9-1.
@@ -19,6 +22,9 @@ public class User implements Serializable {
 
     @Column
     private String password;
+
+    @Transient
+    private List<String> addressList = new ArrayList<String>();
 
     public String getUsername() {
         return username;
@@ -42,5 +48,13 @@ public class User implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public List<String> getAddressList() {
+        return addressList;
+    }
+
+    public void setAddressList(List<String> addressList) {
+        this.addressList = addressList;
     }
 }

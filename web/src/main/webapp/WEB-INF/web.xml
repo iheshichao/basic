@@ -64,9 +64,14 @@
         <param-value>classpath:/conf/logback.xml</param-value>
     </context-param>
 
-    <!-- 添加application监听 -->
+    <!-- 添加项目启动时的监听 -->
     <listener>
         <listener-class>cn.lingban.dubbo.core.ApplicationListener</listener-class>
+    </listener>
+
+    <!-- 添加session拦截器 -->
+    <listener>
+        <listener-class>cn.lingban.dubbo.core.SessionInterceptor</listener-class>
     </listener>
 
 </web-app>

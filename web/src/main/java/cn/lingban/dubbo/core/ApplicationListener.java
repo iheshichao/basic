@@ -3,13 +3,18 @@ package cn.lingban.dubbo.core;
 import cn.lingban.dubbo.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.NamedThreadLocal;
 import org.springframework.web.context.support.WebApplicationContextUtils;
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by chao on 2016/10/27.
+ * Created by heshichao on 16-8-31.
  */
 public class ApplicationListener implements ServletContextListener {
 
@@ -24,11 +29,8 @@ public class ApplicationListener implements ServletContextListener {
      */
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        // 因为加载方式不同，故不能直接使用注解
-        // 具体原因搜索
-        UserService userService = (UserService) WebApplicationContextUtils.getWebApplicationContext(sce.getServletContext()).getBean(UserService.class);
-
-        logger.info(">>>>>>>>>>>>>>>>>>>>>>> 项目正在启动....");
+        // UserService userService = (UserService) WebApplicationContextUtils.getWebApplicationContext(sce.getServletContext()).getBean("userService");
+        logger.info("--> do somethings when start ...");
     }
 
     /**
@@ -40,7 +42,6 @@ public class ApplicationListener implements ServletContextListener {
      */
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-
-        logger.info(">>>>>>>>>>>>>>>>>>>>>>> 项目正在关闭....");
+        logger.info("--> do somethings when end ...");
     }
 }
