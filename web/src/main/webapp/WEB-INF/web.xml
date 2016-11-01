@@ -69,9 +69,4 @@
         <listener-class>cn.lingban.dubbo.core.ApplicationListener</listener-class>
     </listener>
 
-    <!-- 添加session拦截器 -->
-    <listener>
-        <listener-class>cn.lingban.dubbo.core.SessionInterceptor</listener-class>
-    </listener>
-
 </web-app>
